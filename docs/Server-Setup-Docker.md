@@ -1,4 +1,4 @@
-### Setup of https://bitcoinexplorer.org on Ubuntu 20.04
+### Setup of https://expolorer.bitbi.org on Ubuntu 20.04
 
 	# update and install packages
 	apt update
@@ -6,8 +6,8 @@
 	apt install docker.io
 	
 	# get source, npm install
-	git clone https://github.com/janoside/btb-rpc-explorer.git
-	cd btb-rpc-explorer
+	git clone https://github.com/bitbi-core/rpc-explorer.git
+	cd rpc-explorer
 	
 	# build docker image
 	docker build -t btb-rpc-explorer .

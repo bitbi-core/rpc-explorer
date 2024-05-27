@@ -1,4 +1,4 @@
-### Setup of https://bitcoinexplorer.org on Ubuntu 20.04
+### Setup of https://explorer.bitbi.org on Ubuntu 20.04
 
 Update and install packages
 
@@ -18,27 +18,27 @@ Install NVM from https://github.com/nvm-sh/nvm
 Misc setup
 
     # add user for btb-related stuff
-    adduser bitcoin # leave everything blank if you want
+    adduser bitbi # leave everything blank if you want
     
     # gen self-signed cert
     openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/selfsigned.key -out /etc/ssl/certs/selfsigned.crt
     
     # get nginx config
-    wget https://raw.githubusercontent.com/janoside/btb-rpc-explorer/master/docs/explorer.btc21.org.conf
-    mv explorer.btc21.org.conf /etc/nginx/sites-available/bitcoinexplorer.org
+    wget https://github.com/bitbi-core/rpc-explorer/blob/c5162c7124478b9f3c70d1f64f19684e32ccde90/docs/explorer.bitbi.org.conf
+    mv explorer.bitbi.org.conf /etc/nginx/sites-available/explorer.bitbi.org.conf
 
 Get source, npm install
 
-    cd /home/bitcoin
-    git clone https://github.com/janoside/btb-rpc-explorer.git
-    cd /home/bitcoin/btb-rpc-explorer
+    cd /home/bitbi
+    git clone https://github.com/bitbi-core/rpc-explorer.git
+    cd /home/bitbi/rpc-explorer
     npm install
     
     # startup via pm2
     pm2 start bin/www --name "btb"
     
     # get letsencrypt cert
-    certbot --nginx -d bitcoinexplorer.org
+    certbot --nginx -d explorer.bitbi.org
     
 Tor setup
 

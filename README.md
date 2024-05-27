@@ -1,6 +1,6 @@
 # BTB RPC Explorer
 
-## Self-Hosted Bitbi explorer for everyone running [Bitbi Core](https://github.com/bitcoin/bitcoin).
+## Self-Hosted Bitbi explorer for everyone running [Bitbi Core](https://github.com/bitbi-core/bitbi).
 
 [![npm version][npm-ver-img]][npm-ver-url] [![NPM downloads][npm-dl-alltime-img]][npm-dl-url]
 
@@ -12,13 +12,13 @@
 
 
 
-This is a self-hosted explorer for the Bitbi blockchain, driven by RPC calls to your own [Bitbi](https://github.com/bitcoin/bitcoin) node. It is easy to run and can be connected to other tools (like Electrum servers) to achieve a full-featured explorer.
+This is a self-hosted explorer for the Bitbi blockchain, driven by RPC calls to your own [Bitbi](https://github.com/bitbi-core/bitbi) node. It is easy to run and can be connected to other tools (like Electrum servers) to achieve a full-featured explorer.
 
 Whatever reasons you may have for running a full node (trustlessness, technical curiosity, supporting the network, etc) it's valuable to appreciate the *fullness* of your node. With this explorer, you can explore not just the blockchain database, but also explore all of the functional capabilities of your own node.
 
 Live demos:
 
-* [BitcoinExplorer.org](https://bitcoinexplorer.org) / [testnet](https://testnet.bitcoinexplorer.org) / [signet](https://signet.bitcoinexplorer.org)
+* [BitbiExplorer.org](https://explorer.bitbi.org) / 
 
 
 # Features
@@ -27,7 +27,7 @@ Live demos:
 * View details of blocks, transactions, and addresses
 * Analysis tools for viewing stats on blocks, transactions, and miner activity
 * JSON REST API
-* See raw JSON content from bitcoind used to generate most pages
+* See raw JSON content from bitbid used to generate most pages
 * Search by transaction ID, block hash/height, and address
 * Optional transaction history for addresses by querying from Electrum-protocol servers (e.g. Electrs, ElectrumX), blockchain.com, blockchair.com, or blockcypher.com
 * Mempool summary, with fee, size, and age breakdowns
@@ -43,7 +43,7 @@ See [CHANGELOG.md](/CHANGELOG.md).
 
 ## Prerequisites
 
-1. Install `Bitbi Core` - [instructions](https://bitcoin.org/en/full-node). Ensure that `Bitbi Core`'s' RPC server is enabled (`server=1`).
+1. Install `Bitbi Core` - [instructions](https://www.bitbi.org/install). Ensure that `Bitbi Core`'s' RPC server is enabled (`server=1`).
 2. Allow `Bitbi Core` to synchronize with the Bitbi network (you *can* use this tool while sychronizing, but some pages may fail).
 3. Install Node.js (14+ recommended).
 
@@ -111,12 +111,12 @@ In either case, refer to [.env-sample](.env-sample) for a list of the options an
 For configuring with CLI arguments, run `btb-rpc-explorer --help` for the full list of options. An example execution is:
 
 ```bash
-btb-rpc-explorer --port 8080 --bitcoind-port 18443 --bitcoind-cookie ~/.bitcoin/regtest/.cookie
+btb-rpc-explorer --port 8080 --bitbid-port 18443 --bitbid-cookie ~/.bitbi/regtest/.cookie
 ```
 
 #### Demo site settings
 
-To match the features visible on the demo site at [BitcoinExplorer.org](https://bitcoinexplorer.org) you'll need to set the following non-default configuration values:
+To match the features visible on the demo site at [explorer.bitbi.org](https://explorer.bitbi.org) you'll need to set the following non-default configuration values:
 
     BTBEXP_DEMO=true 		# enables some demo/informational aspects of the site
     BTBEXP_NO_RATES=false		# enables querying of exchange rate data
@@ -148,17 +148,6 @@ This will cause users to be redirected to your login page if needed.
 See [instructions here](docs/nginx-reverse-proxy.md) for using nginx+certbot (letsencrypt) for an HTTPS-accessible, reverse-proxied site.
 
 
-# Support
-
-If you get value from this project, please consider supporting my work with a donation. All donations are truly appreciated.
-
-Donate via BTB Pay Server:
-
-* [https://donate.bitcoinexplorer.org](https://donate.bitcoinexplorer.org)
-
-Or, via a lightning address:
-
-thanks@donate.btc21.org
 
 
 [npm-ver-img]: https://img.shields.io/npm/v/btb-rpc-explorer.svg?style=flat
