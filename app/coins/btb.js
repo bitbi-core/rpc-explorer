@@ -108,10 +108,10 @@ module.exports = {
 	minTxWeight: 166 * 4, // hack
 	difficultyAdjustmentBlockCount: 2016,
 	maxSupplyByNetwork: {
-		"main": new Decimal(20999817.31308491), // ref: https://bitcoin.stackexchange.com/a/38998
-		"test": new Decimal(21000000),
-		"regtest": new Decimal(21000000),
-		"signet": new Decimal(21000000)
+		"main": new Decimal(21000000000), // ref: https://bitcoin.stackexchange.com/a/38998
+		"test": new Decimal(21000000000),
+		"regtest": new Decimal(21000000000),
+		"signet": new Decimal(21000000000)
 	},
 	targetBlockTimeSeconds: 600,
 	targetBlockTimeMinutes: 10,
@@ -122,10 +122,10 @@ module.exports = {
 	feeSatoshiPerByteBucketMaxima: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 15, 20, 25, 50, 75, 100, 150],
 	
 	halvingBlockIntervalsByNetwork: {
-		"main": 210000,
-		"test": 210000,
+		"main": 105000,
+		"test": 105000,
 		"regtest": 150,
-		"signet": 210000
+		"signet": 105000
 	},
 
 	// used for supply estimates that don't need full gettxoutset accuracy
@@ -137,7 +137,7 @@ module.exports = {
 	},
 
 	utxoSetCheckpointsByNetwork: {
-		"main": {"height":702329,"bestblock":"00000000000000000005d323e8b476eac408e88002591b5ed7381ec9baaf2d13","transactions":45854214,"txouts":75356871,"bogosize":5640223435,"hash_serialized_2":"727879e512dde3c87ec4b3b4185d8212506a5eee517694a34785c0a63a7d78b9","disk_size":4582442992,"total_amount":"18826856.29247566","lastUpdated":1632692076775}
+		// "main": {"height":24801,"bestblock":"5d3f005f31c0241b37161fe4b8840c272127169ed8fe7d68c4b5a99981f5f23d","transactions":45854214,"txouts":75356871,"bogosize":5640223435,"hash_serialized_2":"727879e512dde3c87ec4b3b4185d8212506a5eee517694a34785c0a63a7d78b9","disk_size":4582442992,"total_amount":"18826856.29247566","lastUpdated":1632692076775}
 	},
 	
 	genesisBlockHashesByNetwork:{
@@ -539,7 +539,7 @@ module.exports = {
 		}
 	},
 	blockRewardFunction:function(blockHeight, chain) {
-		let halvingBlockInterval = (chain == "regtest" ? 150 : 105120);
+		let halvingBlockInterval = (chain == "regtest" ? 150 : 105000);
 		let index = Math.floor(blockHeight / halvingBlockInterval);
 
 		return blockRewardEras[index];
