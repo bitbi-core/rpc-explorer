@@ -64,7 +64,7 @@ module.exports = {
 	name:"Bitbi",
 	ticker:"BTB",
 	logoUrlsByNetwork:{
-		"main":"./img/logo/mainnet/logo.svg",
+		"main":"./img/logo/mainnet/btb-logo.png",
 		"test":"./img/logo/testnet/logo.svg",
 		"regtest":"./img/logo/regtest/logo.svg",
 		"signet":"./img/logo/signet/logo.svg"

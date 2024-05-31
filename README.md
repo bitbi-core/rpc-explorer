@@ -1,5 +1,7 @@
 # BTB RPC Explorer
 
+Simple RPC Explorer for [Bitbi](https://bitbi.org)
+
 ## Self-Hosted Bitbi explorer for everyone running [Bitbi Core](https://github.com/bitbi-core/bitbi).
 
 [![npm version][npm-ver-img]][npm-ver-url] [![NPM downloads][npm-dl-alltime-img]][npm-dl-url]
@@ -160,3 +162,7 @@ See [instructions here](docs/nginx-reverse-proxy.md) for using nginx+certbot (le
 [npm-dl-yearly-img]: https://badgen.net/npm/dy/btb-rpc-explorer?icon=npm&cache=300
 [npm-dl-alltime-img]: https://badgen.net/npm/dt/btb-rpc-explorer?icon=npm&cache=300&label=total%20downloads
 
+
+## Credits
+
+This project is based on the original work of [btc-rpc-explorer](https://github.com/janoside/btc-rpc-explorer), Thanks to *janoside* for the great work.
