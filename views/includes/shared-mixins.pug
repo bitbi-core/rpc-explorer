@@ -428,7 +428,7 @@ mixin cardHighlightBadge(text)
 
 
 
-mixin hexDataDisplay(hex, order="utf8,ascii,hex")
+mixin hexDataDisplay(hex, order="hex,utf8,ascii")
 	- var items = order.split(",");
 	- var uniqueId = utils.getRandomString(12, "aA");
 

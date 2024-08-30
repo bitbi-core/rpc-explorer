@@ -319,7 +319,7 @@ block content
 												+successBadge("coinbase")
 
 												.mt-2
-													+hexDataDisplay(vin.coinbase)
+													+hexDataDisplay(vin.coinbase.substring(10), 'utf8')
 
 										if (vin.scriptSig && vin.scriptSig.asm)
 											.mb-2
